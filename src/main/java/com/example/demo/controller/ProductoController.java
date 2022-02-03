@@ -63,7 +63,7 @@ private ProductoServices ProductoServices;
 	@CrossOrigin
 	@ApiOperation("Actualiza un productos")
 	@PutMapping
-	public ResponseEntity<Productos> actualizarCategoria(@RequestBody Productos productos){
+	public ResponseEntity<Productos> actualizarProducto(@RequestBody Productos productos){
 		try {
 			return ResponseEntity.ok(ProductoServices.UpdateProducto(productos));
 		} catch (Exception e) {
@@ -73,7 +73,7 @@ private ProductoServices ProductoServices;
 	@CrossOrigin
 	@ApiOperation("Elimina un producto")
 	@DeleteMapping("/{idCategoria}")
-	public ResponseEntity<Void> eliminarCategoria(@PathVariable ("idCategoria") Long idProducto){
+	public ResponseEntity<Void> eliminarProducto(@PathVariable ("idCategoria") Long idProducto){
 		try {
 			ProductoServices.deleteProducto(idProducto);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
